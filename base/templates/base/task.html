@@ -1,0 +1,29 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body">
+    <table width="500"> 
+        <col style="width: 80%;" />
+        <col style="width: 20%;" />
+
+        <tr>
+            <th>Task Descrption</th>
+            <th>Due date</th>
+        </tr>
+        <tr>
+            <td style="word-wrap: break-word">{{task.description}}</td> 
+            <td>{{task.due_date}}</td>
+        </tr>
+    </table>
+</div>
+
+
+{% endblock content %}
+
+
+
