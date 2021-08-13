@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'base.apps.BaseConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+RISPY_TEMPLATE_PACK = 'uni-form'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,10 +119,22 @@ USE_TZ = True
 
 LOGIN_URL = 'login'
 
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST ='smtp.yahoo.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'shikaijin7@yahoo.com'
+EMAIL_HOST_PASSWORD = 'series346'
+DEFAULT_FROM_EMAIL = 'shikaijin7@yahoo.com'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+EMAIL_USE_SSL = False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

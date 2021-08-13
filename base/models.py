@@ -19,4 +19,3 @@ class Task(models.Model):
         ordering = ['complete']
     
 
-
