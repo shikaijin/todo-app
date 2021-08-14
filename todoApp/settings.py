@@ -128,11 +128,11 @@ STATIC_URL = '/static/'
 
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST ='smtp.yahoo.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'shikaijin7@yahoo.com'
-EMAIL_HOST_PASSWORD = 'series346'
-DEFAULT_FROM_EMAIL = 'shikaijin7@yahoo.com'
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shikaijin7@gmail.com'
+EMAIL_HOST_PASSWORD = 'algkcujvbrxcdsqd'
+DEFAULT_FROM_EMAIL = 'shikaijin7@gmail.com'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 EMAIL_USE_SSL = False
 

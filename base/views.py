@@ -4,8 +4,6 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
 
-from django.core.mail import send_mail
-
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -18,14 +16,6 @@ from django.db import transaction
 
 from .models import Task
 from .forms import PositionForm
-
-def ViewSendEmail(request):
-    send_mail('Hello from Bilal Khan',
-        'Hello there, This is an automated message.',
-        request.user.email, #FROM 
-        ['shikaijin77@gmail.com'], #TO
-        fail_silently=False)
-    return render(request, 'nextone/email_send.html')
 
 
 class CustomLoginView(LoginView):
@@ -116,3 +106,6 @@ class TaskReorder(View):
                 self.request.user.set_task_order(positionList)
 
         return redirect(reverse_lazy('tasks'))
+
+
+
